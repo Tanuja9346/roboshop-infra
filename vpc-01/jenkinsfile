@@ -1,12 +1,16 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
      agent { node { label 'AGENT-1' } }                                               //any
+  options {
+        // Timeout counter starts AFTER agent is allocated
+        timeout(time: 1, unit: 'HOUR')
+    }
 
     stages {
         stage('init') {
             steps {
                 
-                sh '''
+                sh'''
                   cd vpc-01
                   ls -ltr
                   pwd
@@ -17,7 +21,8 @@ pipeline {
         }
         stage('plan') {
             steps {
-                sh '''
+
+                sh'''
                   cd vpc-01
                   ls -ltr
                   pwd
