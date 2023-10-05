@@ -1,0 +1,31 @@
+// Jenkinsfile (Declarative Pipeline)
+pipeline {
+     agent { node { label 'AGENT-1' } }                                               //any
+
+    stages {
+        stage('init') {
+            steps {
+                
+                sh '''
+                  ls -ltr
+                  pwd
+                  terraform init
+
+                '''    
+            }
+        }
+        stage('plan') {
+            steps {
+                sh '''
+                  ls -ltr
+                  pwd
+                  terraform plan
+
+                '''  
+            }
+        }
+        
+    }
+       
+
+}
