@@ -28,6 +28,16 @@ pipeline {
         }
         
     }
-       
+   post { 
+          always { 
+            echo 'i will always run whether job is not'
+        }
+        success {
+            echo 'i will run only job is sucess'
+        }
+        failure {
+            echo 'i will run when failure'
+        }
+    }    
 
 }
