@@ -3,7 +3,7 @@ pipeline {
      agent { node { label 'AGENT-1' } }                                               //any
   options {
         // Timeout counter starts AFTER agent is allocated
-        ansicolor ('xterm')
+        ansicolor('xterm')
     }
 
     stages {
