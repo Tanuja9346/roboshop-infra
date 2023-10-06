@@ -33,7 +33,8 @@ pipeline {
         }
 
       stage('approve') {
-         step {"shall i apply?" 
+         steps{
+            input "shall i apply?" 
          }
 
     }
